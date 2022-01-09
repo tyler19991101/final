@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>final project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="final.css" />
+    <script src="snowstorm.js"></script>
+</head>
+<body>
+
+    <!-- 導覽列 (bs1)-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light ">
+        <a class="navbar-brand">
+            <img src="BSD.jpg" alt="Logo" style="width:100px" />
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <h3><small>登入</small></h3>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-light" style="position:absolute; right:0px; color:#009494" data-toggle="modal" data-target="#helpInfo">需要幫助 <i class="fas fa-question"></i></button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 幫助視窗 (bs2)-->
+    <div class="modal" id="helpInfo">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title"><small>功能簡介</small></h1>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <ul>
+                            <li><h5>註冊問題</h5>須先輸入電子郵件帳號<small>(請輸入正確的電子郵件格式)</small><br />密碼<small>(以8~16字元為限)</small><br />使用者名稱</li>
+                            <li class="listyle"><h5>登入問題</h5>註冊完成後，無需再輸入使用者名稱，直接輸入郵件、密碼即可完成登入。</li>
+                            <li class="listyle"><h5>刪除問題</h5>刪除按鈕則會無條件清除資料庫資料，若要繼續使用則須重新再註冊一次。</li>
+                            <li class="listyle"><h5>ICON</h5>點按”眼睛“ICON可以觀看輸入密碼內容。</li>
+                            <li class="listyle"><h5>快速登入</h5>使用快速登入前，須先註冊且正確登入一次後才可快速登入。</li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">關閉</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- main -->
+    <div class="background">
+
+        <!-- carousel slide (bs6) -->
+        <div class="box">
+            <div id="demo" class="carousel slide" data-ride="carousel" style="width:100%;height:100%">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                    <li data-target="#demo" data-slide-to="4"></li>
+                </ul>
+                <div class="carousel-inner" style="width:100%;height:100%">
+                    <div class="carousel-item active" style="width:100%;height:100%">
+                        <img src="1.jpeg" alt="img1" style="width:100%;height:100%">
+                    </div>
+                    <div class="carousel-item" style="width:100%;height:100%">
+                        <img src="2.jpeg" alt="img2" style="width:100%;height:100%">
+                    </div>
+                    <div class="carousel-item" style="width:100%;height:100%">
+                        <img src="3.jpeg" alt="img3" style="width:100%;height:100%">
+                    </div>
+                    <div class="carousel-item" style="width:100%;height:100%">
+                        <img src="4.jpeg" alt="img4" style="width:100%;height:100%">
+                    </div>
+                    <div class="carousel-item" style="width:100%;height:100%">
+                        <img src="5.jpeg" alt="img5" style="width:100%;height:100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width: 30%; height: 50%; background-color: white; margin-left:60%; margin-top:3%; border-radius: 10px; position:absolute">
+            <!-- account (bs3)-->
+            <div class="form-group">
+                <label for="exampleInputEmail1" style="font-size:larger; margin-top:2.5%;">登入</label>
+                <input type="text" class="form-control" id="account" aria-describedby="account" placeholder="輸入帳號" style="width:95%;margin:0 auto; margin-top:10%;" />
+
+            </div>
+            <!-- passwd (bs4)-->
+            <div class="input-group mb-3 " style="width: 95%; margin: 0 auto; margin-top: 10%;">
+                <input type="password" class="form-control" id="myInput" placeholder="輸入密碼" style="margin:0 auto; " />
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" onclick="showPwd(this)"><i class="fas fa-eye-slash"></i></button>
+                </div>
+            </div>
+            <small id="emailHelp" class="form-text text-muted" style="margin-left:5%;">We'll never share your personal privacy with anyone.</small>
+            <a href="#" id="innn">快速登入</a>
+            <!--  button (bs5)-->
+            <div class="btn-group btn-group-lg" style="margin-top:5%; width:100%;height:auto;">
+                <button type="button" class="btn btn-primary" id="signbtn">註冊</button>
+                <button type="button" class="btn btn-primary" id="loginbtn">登入</button>
+                <button type="button" class="btn btn-primary" id="logoutbtn">刪除</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- buttom info -->
+    <div class="father">
+        <div class="buttom">
+            <p class="buttomtitle">客服中心</p>
+            <ul style="padding-left: 3%">
+                <li class="buttomwd">幫助中心</li>
+                <li class="buttomwd">商城</li>
+                <li class="buttomwd">付款方式</li>
+                <li class="buttomwd">錢包</li>
+                <li class="buttomwd">會員</li>
+                <li class="buttomwd">退換貨政策</li>
+                <li class="buttomwd">延長訂單撥款</li>
+                <li class="buttomwd">聯絡客服</li>
+                <li class="buttomwd">防詐騙宣導</li>
+            </ul>
+
+        </div>
+        <div class="buttom2">
+            <p class="buttomtitle">關於我們</p>
+            <ul style="padding-left: 3%">
+                <li class="buttomwd">關於我們</li>
+                <li class="buttomwd">加入我們</li>
+                <li class="buttomwd">聯絡媒體</li>
+                <li class="buttomwd">條款</li>
+                <li class="buttomwd">限時特賣</li>
+            </ul>
+        </div>
+        <div class="buttom3">
+            <p class="buttomtitle">付款</p>
+            <img src="visa.jpeg" alt="visa" class="creditcard" style="margin-left: 20%; margin-top: 3%;" />
+            <img src="mastercard.jpeg" alt="mastercard" class="creditcard" style="margin-top: 3%;"/>
+            <br />
+            <img src="jcb.jpeg" alt="visa" class="creditcard" style="margin-top:3%; margin-left:20%" />
+            <img src="union.jpeg" alt="visa" class="creditcard" style="margin-top:3%" />
+
+            <p class="buttomtitle" style="margin-top:8%;">物流合作</p>
+            <img src="catrun.jpeg" alt="catrun" class="log"style="margin-left: 5%;margin-top:3%;"/>
+            <img src="711.jpeg" alt="711"class="log" style="margin-top: 3%;"/>
+            <img src="familymart.jpeg" alt="familymart" class="log"style="margin-top: 3%;"/>
+            <img src="ok.jpeg" alt="ok" class="log"style="margin-top: 3%; margin-left: 10%;" />
+            <img src="hilife.jpeg" alt="hilife" class="log"style="margin-top:3%;"/>
+
+        </div>
+        <div class="buttom4">
+            <p class="buttomtitle">關注我們</p>
+            <ul style="padding-left: 3%">
+                <li class="buttomwd"><a href="https://zh-tw.facebook.com/" style="color:black;"><i class="fab fa-facebook-square fa-lg" style="margin-right:3%;"></i>Facebook</a></li>
+                <li class="buttomwd"><a href="https://www.instagram.com/" style="color:black;"><i class="fab fa-instagram fa-lg" style="margin-right:3%"></i>Instagram</a></li>
+                <li class="buttomwd"><a href="https://twitter.com/?lang=zh-Hant"style="color:black;"> <i class="fab fa-twitter fa-lg" style="margin-right:3%"></i>Twitter</a></li>
+            </ul>
+        </div>
+        <div class="buttom5">
+            <p class="buttomtitle">權益聲明</p>
+            <ul style="padding-left: 3%">
+                <li class="buttomwd">會員權益</li>
+                <li class="buttomwd">賣家權益</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- function -->
+    <script>snowStorm.followMouse = false;
+        snowStorm.flakesMaxActive = 100;
+        snowStorm.animationInterval = 20;
+        snowStorm.useMeltEffect = true;
+        snowStorm.resume();
+
+        function showPwd(button) {
+            var x = document.getElementById("myInput");
+            $(button).find('i').remove();
+            if (x.type == "password") {
+                x.type = "text";
+                $(button).html($('<i/>', { class: 'fa fa-eye' }));
+            } else {
+                x.type = "password";
+                $(button).html($('<i/>', { class: 'fa fa-eye-slash' }));
+            }
+        };
+
+       
+
+        $('#signbtn').click(function () {
+            var myreg = /^[^\[\]\(\)\\<>:;,@.]+[^\[\]\(\)\\<>:;,@]*@[a-z0-9A-Z]+(([.]?[a-z0-9A-Z]+)*[-]*)*[.]([a-z0-9A-Z]+[-]*)+$/g;
+            swal({
+                text: '輸入電子郵件帳號',
+                content: "input",
+                button: {
+                    text: "確認",
+                    closeModal: false,
+                },
+            })
+                .then(value => {
+                    if (myreg.test(value) != true) {
+                        swal({
+                            icon: 'error',
+                            title: "郵件錯誤",
+                            text: "請輸入有效的電子郵件",
+                            button: "好"
+                        });
+
+                    } else {
+                        const signUpEmail = value;
+                        swal({
+                            text: '輸入密碼',
+                            content: "input",
+                            button: {
+                                text: "確認",
+                                closeModal: false,
+                            },
+
+                        })
+                            .then(value => {
+                                if (value.length < 8) {
+                                    swal("字數過短", "請至少輸入8個字元！", "error", { button: "好" });
+                                }
+                                else if (value.length > 16) {
+                                    swal("字數過長", "請輸入8~16個字元！", "error", { button: "好" });
+                                } else {
+                                    const signUpPassword = value;
+                                    swal({
+                                        text: '輸入使用者名稱',
+                                        content: "input",
+                                        button: {
+                                            text: "確認",
+                                            closeModal: false,
+                                        },
+
+                                    })
+                                        .then(value => {
+                                            const signUpName = value;
+                                            const storageKey = signUpEmail + signUpPassword;
+                                            const checkUser = Boolean(localStorage.getItem(storageKey));
+                                            function successAction() {
+                                                if (checkUser) {
+                                                    return swal("重複註冊", "已註冊過帳號，請直接登入", "warning", { button: "好" });
+                                                }
+
+                                                localStorage.setItem(storageKey, signUpName);
+                                                swal("註冊成功", "請先登入", "success", { button: "好" });
+                                                flag = 1;
+
+                                            }
+                                            successAction();
+                                        });
+                                }
+                            });
+                    }
+                });
+            
+        });
+
+
+        $('#loginbtn').click(function () {
+            const loginEmail = document.querySelector('#account');
+            const loginPassword = document.querySelector('#myInput');
+            const storageKey = loginEmail.value + loginPassword.value;
+            const userName = localStorage.getItem(storageKey);
+            const checkUser = Boolean(userName);
+            const acc = localStorage.getItem('acc');
+            const pas = localStorage.getItem('pas');
+            const check = acc + pas;
+            var myreg = /^[^\[\]\(\)\\<>:;,@.]+[^\[\]\(\)\\<>:;,@]*@[a-z0-9A-Z]+(([.]?[a-z0-9A-Z]+)*[-]*)*[.]([a-z0-9A-Z]+[-]*)+$/g;
+            function loginAction() {
+                const confirmMemory = confirm('是否要記住密碼，如需快速登入請按確認！');
+                swal(`Hi~ ${userName}` + "歡迎", "成功登入", "success", { buttons: "好" })
+                    .then((value) => {
+                        window.location.href = 'https://shopee.tw/';
+                    });
+                if (confirmMemory) {
+                    localStorage.setItem('memory', `Hi~ ${userName}`);
+                    localStorage.setItem('acc', loginEmail.value);
+                    localStorage.setItem('pas', loginPassword.value);
+                }
+            }
+            if (!loginEmail.value || !loginPassword.value) {
+                swal("輸入未完全", "請確認帳號密碼是否確實填寫", "warning", { button: "好" });
+            } else if (myreg.test(loginEmail.value) != true) {
+                swal("格式錯誤", "請輸入正確郵件格式", "error", { button: "好" });
+            } else if(!checkUser) {
+                return swal("認證錯誤", "請確認帳號密碼是否正確", "error", { button: "好" });
+            } else if (check == storageKey) {
+                swal(`Hi~ ${userName}` + "歡迎", "成功登入", "success", { buttons: "好" })
+                    .then((value) => {
+                        window.location.href = 'https://shopee.tw/';
+                    });
+            }  else {
+                loginAction();
+            }
+        });
+
+
+        $('#logoutbtn').click(function () {
+
+            swal({
+                title: "確定要刪除所有資料嗎？",
+                text: "一但刪除，資料將無法在復原",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        localStorage.clear();
+                        swal("刪除成功", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("以保留你的資料");
+                    }
+                });
+        });
+
+
+        $('#innn').click(function res() {
+
+            const c = localStorage.getItem('memory');
+            const a = document.querySelector('#account');
+            const b = document.querySelector('#myInput');
+            const acc = localStorage.getItem('acc');
+            const pas = localStorage.getItem('pas');
+            a.value = acc;
+            if (c == null) {
+                swal("無快速登入使用者", "請先註冊且正確登入", {
+                    icon: "error",
+                });
+            }
+            else {
+                swal(`${c}` + " 是你嗎？", {
+                    icon: "info",
+                    buttons: {
+                        cancel: "否",
+                        是: {
+                            value: "yes",
+                        },
+                    },
+                })
+                    .then((value) => {
+                        switch (value) {
+                            case "yes":
+                                swal("歡迎回來！", "成功登入", "success")
+                                    .then((success) => {
+                                        window.location.href = 'https://shopee.tw/';
+                                    });
+                                break;
+
+                            default:
+                                swal("使用者錯誤", "確認是否有註冊", "warning");
+                                break;
+                        }
+
+                    });
+            }
+        });</script>
+
+
+</body>
+</html>
+  

@@ -1,0 +1,48 @@
+﻿.background {
+  
+    width:100vw;
+    height: 650px;
+}
+.listyle{
+    margin-top:5%;
+}
+.buttom ,.buttom2,.buttom3,.buttom4,.buttom5{
+    float: left;
+    display: inline;
+    position: relative;
+    background-color: #A7ADBB;
+    height: 100%;
+    width: 20%;
+}
+
+.father {
+    margin-top:3%;
+    position:relative;
+    height: 550px;
+}
+.box{
+    position:absolute;
+    width:100%;
+    height:650px;
+
+}
+.buttomwd{
+    list-style-type:none;
+    font-size:small;
+    margin-top:10%;
+}
+.buttomtitle{
+    text-align:center;
+    font-weight:bold;
+    font-size:15.5px;
+    
+}
+.creditcard {
+    margin-left:3%;
+    width: 30%;
+    height: 10%;
+}
+.log {
+    width: 30%;
+    height: 5%;
+}
